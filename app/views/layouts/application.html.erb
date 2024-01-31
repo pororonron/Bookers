@@ -8,9 +8,32 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <style>
+      table.is_border {
+        border-collapse: collapse;
+        border-spacing: 0;
+        margin-left: 5px;
+      }
+
+      table.is_border thead {
+        text-align: center;
+      }
+
+      table.is_border th,
+      table.is_border td {
+        padding: 4px 5px;
+      }
+    </style>
   </head>
 
   <body>
+    <% flash.each do |message_type, message| %>
+      <div class="flash-message <%= message_type %>">
+        <%= message %>
+      </div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

@@ -1,5 +1,7 @@
-<p><span class="bold-text">Title: </span><%= @book.title %></p>
-<p><span class="bold-text">Body: </span><%= @book.body %></p>
+<div class="text">
+  <p><span class="bold-text">Title: </span><%= @book.title %></p>
+  <p><span class="bold-text">Body: </span><%= @book.body %></p>
+</div>
 
 <div class="wrap1">
   <span class="link-1"><%= link_to "Edit", edit_book_path(@book.id) %></span>
