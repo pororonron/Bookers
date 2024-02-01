@@ -58,7 +58,7 @@ h2 {
 }
 
 .error-text {
-  margin: 20px 0;
+  margin: 0;
 }
 
 .error-text li {
@@ -72,4 +72,28 @@ h2 {
 
 .bold-text {
   font-weight: bold;
+}
+
+.wrap {
+  display: flex;
+}
+
+.wrap .link-1 {
+  position: relative;
+  margin: 0 16px;
+}
+
+.wrap .link-1::after {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  margin: 0 8px;
+  content: "";
+  width: 1px;
+  height: 100%;
+  background-color: #666;
+}
+
+.form .link-1 {
+  margin-left: 0;
 }

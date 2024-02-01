@@ -1,29 +1,38 @@
 <h1>Editing Book</h1>
 
-<% if @book.errors.any? %>
-  <%= pluralize(@book.errors.count, "error has") %> occurred.
-  <ul>
-    <% @book.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
+<div class="error-text">
+  <% if @book.errors.any? %>
+    <%= pluralize(@book.errors.count, "error has") %> occurred.
+    <ul>
+      <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
 
 
 <%= form_with model: @book do |f| %>
 
- <p>Title</p>
- <%= f.text_field :title %>
+  <div class="form">
+    <p>Title</p>
+    <%= f.text_field :title %>
+  </div>
 
- <p>Body</p>
- <%= f.text_area :body %>
+  <div class="form">
+    <p>Body</p>
+    <%= f.text_area :body %>
+  </div>
 
- <%= f.submit 'Update Book' %>
+  <div class="form">
+    <p><%= f.submit 'Update Book', class: "form-link" %></p>
+  </div>
 
 <% end %>
 
-
-<div class="wrap2">
-  <span class="link-1"><%= link_to "Show", book_path(@book.id) %></span>
-  <span class="link-2"><%= link_to "Back", books_path %></span>
+<div class="form">
+  <div class="wrap">
+    <span class="link-1"><%= link_to "Show", book_path(@book.id) %></span>
+    <span class="link-2"><%= link_to "Back", books_path %></span>
+  </div>
 </div>
